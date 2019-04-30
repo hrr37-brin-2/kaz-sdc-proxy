@@ -1,18 +1,23 @@
 {
-  "name": "fec-proxy",
+  "name": "kaz-fdc-proxy",
   "version": "1.0.0",
-  "description": "Ana's proxy server",
+  "description": "proxy for sdc-media-player-service",
   "main": "index.js",
+  "license": "UNLICENSED",
   "scripts": {
-    "start": "nodemon ./server.js"
+    "server": "nodemon ./server.js",
+    "start": "node ./server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Kazuki Shigemitsu",
   "dependencies": {
+    "artillery": "^1.6.0-28",
     "express": "^4.16.4",
+    "faker": "^4.1.0",
     "gulp": "^4.0.0",
     "gulp-awspublish": "^4.0.0",
+    "http-proxy-middleware": "^0.19.1",
     "morgan": "^1.9.1",
+    "newrelic": "^5.7.0",
     "path": "^0.12.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
