@@ -72,16 +72,17 @@ get(albumId){
     albumId = '/1';
   }
 
-  $.get(`http://localhost:3002/media${albumId}`, (data) => {
+  $.get(`/media${albumId}`, (data) => {
+    console.log(data)
     this.setState({
-      artist:data[0].artist,
-      album: data[0].album,
-      albumTitle: data[0].albumTitle,
-      currentTrack: data[0].album[0].track,
-      audio: new Audio(data[0].album[0].url),
-      url:data[0].album[0].url,
+      artist:data.artist,
+      album: data.tracks,
+      album_title: data.album_title,
+      currentTrack: data.tracks[0].track,
+      audio: new Audio(data.tracks[0].url),
+      url:data.tracks[0].url,
       time: this.state.audio.currentTime,
-      description: data[0].artistDescription
+      description: data.artist_description
     })
   })
 }

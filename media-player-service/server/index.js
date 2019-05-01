@@ -18,19 +18,18 @@ app.use(bodyParser.json())
 
 app.get('/media/:id', (req,res) =>{
   var id = req.params.id;
-
   db.getData(id, (data) => {
-
     res.json(data)
   })
 })
+app.post('/media', db.createAlbum);
 
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(DIST_DIR + "/index.html")
 })
 
 var port = 3002;
 
-app.listen(port, ()=> {
+app.listen(port, '0.0.0.0', ()=> {
   console.log(`Listening to port ${port}`)
 })
