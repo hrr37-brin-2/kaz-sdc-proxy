@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 
 const mediaPlayer = {
-  target: 'http://localhost:3002',
+  target: 'http://ec2-52-70-127-56.compute-1.amazonaws.com:3002',
   changeOrigin: true,
 };
 const mediaPlayerProxy = proxy(mediaPlayer);
@@ -24,5 +24,5 @@ app.use('/:id', mediaPlayerProxy)
 
 
 app.listen(port, () => {
-  console.log(`server running at: http://localhost:${port}`);
+  console.log(`server running at: http://ec2-18-206-120-71.compute-1.amazonaws.com:${port}`);
 });
